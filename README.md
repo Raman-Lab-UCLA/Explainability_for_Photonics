@@ -28,4 +28,4 @@ Running this file will train the CNN and save the model in the specified locatio
 Deep SHAP explains the predictions of an input image in reference to a 'background'. This background can be a collection of images or a single image. To minimize noise, our recommendation is to use a single image, or a 'white' image. This will compare the importance of a feature, to the absence of this feature, towards a target output. 
 
 ### 3) Explanation Validation
-To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD)
+To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD).
