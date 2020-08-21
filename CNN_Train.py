@@ -10,9 +10,9 @@ from keras.layers import Conv2D, AveragePooling2D
 from keras.optimizers import Adam
 
 ## Define Data (Images and Spectra) File Locations
-img_path = 'C:/Users/cyyeu/Documents/MATLAB/Apps/maxwellfdfd-master/_test_Chris/Images/Lumerical/Images/Images/*.png'
-spectra_path = 'C:/Users/cyyeu/Documents/MATLAB/Apps/maxwellfdfd-master/_test_Chris/Data/absorptionData_More_80ptsV2.csv'
-save_dir = 'C:/Users/cyyeu/Documents/Python/CNN/model_10k_batchsize16_epochs300_FULLDATASET_MORE80ptsV2.h5'
+img_path = 'C:/.../*.png'
+spectra_path = 'C:/.../Spectra.csv'
+save_dir = 'C:/.../model.h5'
 
 ## load Images (CNN Input)
 def loadImages(path):
