@@ -3,7 +3,7 @@
 ## Introduction
 Welcome to the Raman Lab GitHub! This repo will walk you through the code used in the following publication: https://pubs.acs.org/doi/full/10.1021/acsphotonics.0c01067 
 
-Here, we use Deep SHAP to explain the behavior of nanophotonic structures learned through a convolutional neural network (CNN). 
+Here, we use Deep SHAP to explain the behavior of nanophotonic structures learned by a convolutional neural network (CNN). 
 
 ## Requirements
 Python3 and Tensorflow 1.0 are recommended due to incompatibility issues with SHAP (as of this writing). 
