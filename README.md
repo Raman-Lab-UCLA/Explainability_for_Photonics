@@ -1,4 +1,7 @@
 # Explainability_for_Metasurfaces
+<p align="center">
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/explainability_publication.PNG" width="800" />
+</p>
 
 ## Introduction
 Welcome to the Raman Lab GitHub! This repo will walk you through the code used in the following publication: https://pubs.acs.org/doi/full/10.1021/acsphotonics.0c01067 
