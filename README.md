@@ -11,7 +11,7 @@ Here, we use Deep SHAP (or SHAP) to explain the behavior of nanophotonic structu
 ## Requirements
 Python3 and Tensorflow 1.0 are recommended due to incompatibility issues with SHAP (as of this writing). 
 
-Installation and usage directions for Deep SHAP are at: https://github.com/slundberg/shap
+Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap
 
 ## Steps
 ### 1) Train the CNN (CNN_Train.py)
