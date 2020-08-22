@@ -42,8 +42,35 @@ shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 
 
 Optionally, for ease of viewing, the SHAP values can be normalized and replotted like so: 
 ```python
+import numpy as np
+import pickle
+import matplotlib.pyplot as plt
+import matplotlib.colors as colors
 
+with open('C:/.../shap_explanations.data', 'rb') as filehandle:
+    shap_values_new = pickle.load(filehandle)
+    
+X = np.arange(-20, 20, 1)
+Y = np.arange(-20, 20, 1)
+X, Y = np.meshgrid(X, Y)
+
+maximum = np.max(shap_values_new)
+minimum = -np.min(shap_values_new)
+
+shap_i = shap_values_new[i][:][:][:][:] #where 'i' a value between 0 and the total list size
+shap_i[shap_i>0] = shap_i[shap_i>0] / maximum
+shap_i[shap_i<0] = shap_i[shap_i<0] / minimum
+shap_values_normalized = shap_i.squeeze()[::-1]
+
+fig = plt.figure()
+ax = fig.gca()
+pcm = ax.pcolormesh(X, Y, shap_values_normalized, norm=colors.SymLogNorm(linthresh=0.01, linscale=1),cmap='bwr', vmin=-1, vmax = 1)
+fig.colorbar(pcm)
+ax.axis('off')
 ```
+<p align="center">
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_replot.png" width="150" />
+</p>
 
 ### 3) Explanation Validation
 To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD).
