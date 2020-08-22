@@ -8,7 +8,7 @@ back_img = np.array(back_img)[0]
 shap_values_convert = shap_values[47].squeeze()
 for i in range(np.shape(shap_values_convert)[0]):
     for j in range(np.shape(shap_values_convert)[1]):
-        if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #95% red        
+        if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #Convert Top 95% of Red Pixels
             if back_img[i][j] == 255: 
                 new_image[i][j] = 0
             elif 255 > back_img[i][j] >= 0:
