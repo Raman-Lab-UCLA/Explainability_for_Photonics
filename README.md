@@ -40,5 +40,10 @@ shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_index.png" width="200" />
 </p>
 
+Optionally, for ease of viewing, the SHAP values can be normalized and replotted like so: 
+```python
+
+```
+
 ### 3) Explanation Validation
 To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD).
