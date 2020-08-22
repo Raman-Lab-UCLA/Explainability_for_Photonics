@@ -25,7 +25,7 @@ save_dir = 'C:/.../model.h5'
 Running this file will train the CNN and save the model in the specified location. 
 
 ### 2) Explain CNN Results (SHAP_Explanation.py)
-Deep SHAP explains the predictions of an 'base' image in reference to a 'background'. This background can be a collection of images or a single image. To minimize noise, our recommendation is to use a 'white' image as the base, and the image to be evaluated as the 'background'. This will compare the importance of a feature, to the absence of this feature, towards a target output. Simply update the following paths with run the 'SHAP_Explanation.py' script:
+Deep SHAP explains the predictions of an 'base' image in reference to a 'background'. This background can be a collection of images or a single image. To minimize noise, our recommendation is to use a 'white' image as the base, and the image to be evaluated as the 'background'. This will compare the importance of a feature, to the absence of this feature, towards a target output. Simply update the following paths and run the 'SHAP_Explanation.py' script:
 ```python
 ## Define File Locations (CNN, Test Image, and Background Image)
 model = load_model('C:/.../model.h5', compile=False)
@@ -48,16 +48,16 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 
 with open('C:/.../shap_explanations.data', 'rb') as filehandle:
-    shap_values_new = pickle.load(filehandle)
+    shap_values = pickle.load(filehandle)
     
 X = np.arange(-20, 20, 1)
 Y = np.arange(-20, 20, 1)
 X, Y = np.meshgrid(X, Y)
 
-maximum = np.max(shap_values_new)
-minimum = -np.min(shap_values_new)
+maximum = np.max(shap_values)
+minimum = -np.min(shap_values)
 
-shap_i = shap_values_new[i][:][:][:][:] #where 'i' a value between 0 and the total list size
+shap_i = shap_values[i][:][:][:][:] #where 'i' a value between 0 and the total list size
 shap_i[shap_i>0] = shap_i[shap_i>0] / maximum
 shap_i[shap_i<0] = shap_i[shap_i<0] / minimum
 shap_values_normalized = shap_i.squeeze()[::-1]
@@ -73,4 +73,16 @@ ax.axis('off')
 </p>
 
 ### 3) Explanation Validation (SHAP_Validation.py)
-To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD). Run the 'SHAP_Validation.py' script after specifying 
+To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD). Run the 'SHAP_Validation.py' script after specifying the location of the saved SHAP values:
+```python
+#Import SHAP Values
+with open('C:/.../shap_explanations.data', 'rb') as filehandle:
+    shap_values = pickle.load(filehandle)
+```
+Tune the conversion settings in the script by modifying the following line in the script:
+```python
+if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #95% red        
+```
+<p align="center">
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_validation.PNG" width="500" />
+</p>
