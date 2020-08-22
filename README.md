@@ -29,8 +29,8 @@ Deep SHAP explains the predictions of an 'base' image in reference to a 'backgro
 ```python
 ## Define File Locations (CNN, Test Image, and Background Image)
 model = load_model('C:/.../model.h5', compile=False)
-test_img_path = 'C:/.../Test.png'
 back_img_path = 'C:/.../Background.png'
+base_img_path = 'C:/.../Base.png'
 ```
 
 ### 3) Explanation Validation
