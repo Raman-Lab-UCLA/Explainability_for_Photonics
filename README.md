@@ -37,7 +37,7 @@ After running the script, a list of SHAP value heatmaps (<b>shap_values</b>) wil
 shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 'i' a value between 0 and the total list size
 ```
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_index.png" width="200" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_index.png" width="250" />
 </p>
 
 Optionally, for ease of viewing, the SHAP values can be normalized and replotted like so: 
@@ -69,7 +69,7 @@ fig.colorbar(pcm)
 ax.axis('off')
 ```
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_replot.png" width="150" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_replot.png" width="200" />
 </p>
 
 ### 3) Explanation Validation (SHAP_Validation.py)
