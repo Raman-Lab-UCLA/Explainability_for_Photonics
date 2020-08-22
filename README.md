@@ -72,5 +72,5 @@ ax.axis('off')
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_replot.png" width="150" />
 </p>
 
-### 3) Explanation Validation
-To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD).
+### 3) Explanation Validation (SHAP_Validation.py)
+To validate that the explanations represent physical phenomena, we used the SHAP explanations to reconstruct the original image, which can either suppress or enhance an absorption spectrum. This reconstructed image can be imported directly into EM simulation software (e.g., Lumerical FDTD). Run the 'SHAP_Validation.py' script after specifying 
