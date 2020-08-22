@@ -5,9 +5,9 @@ from keras.models import load_model
 import pickle
 
 ## Define File Locations (CNN, Test Image, and Background Image)
-model = load_model('C:/Users/cyyeu/Documents/Python/CNN/model_10k_batchsize16_epochs300_FULLDATASET_MORE80ptsV2.h5', compile=False)
-test_img_path = 'C:/Users/cyyeu/Documents/MATLAB/Apps/maxwellfdfd-master/_test_Chris/Images/Lumerical/Images/Test/indexl2200w500.png'
-back_img_path = 'C:/Users/cyyeu/Documents/MATLAB/Apps/maxwellfdfd-master/_test_Chris/Images/Lumerical/SHAP/SHAPv2/More/Blank.png'
+model = load_model('C:/.../model.h5', compile=False)
+test_img_path = 'C:/.../Test.png'
+back_img_path = 'C:/.../Background.png'
 
 ## load Image Function
 def loadImages(path):
