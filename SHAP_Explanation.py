@@ -28,7 +28,7 @@ back_img = np.array(back_img)
 background = back_img.reshape(1,40,40,1)
 e = shap.DeepExplainer(model, background)
 shap_values = e.shap_values(base_img.reshape(1,40,40,1))
-shap.image_plot(shap_values, back_img_path.reshape(1,40,40,1), show=False)
+shap.image_plot(shap_values, back_img.reshape(1,40,40,1), show=False)
 
 ## Save SHAP Explanations
 with open('shap_explanations.data', 'wb') as filehandle:
