@@ -9,12 +9,12 @@ from keras.layers import Dense, BatchNormalization, LeakyReLU, Flatten
 from keras.layers import Conv2D, AveragePooling2D
 from keras.optimizers import Adam
 
-## Define Data (Images and Spectra) File Locations
+## Define File Locations (Images, Spectra, and CNN Model Save)
 img_path = 'C:/.../*.png'
 spectra_path = 'C:/.../Spectra.csv'
 save_dir = 'C:/.../model.h5'
 
-## load Images (CNN Input)
+## Load Images (CNN Input)
 def loadImages(path):
     loadedImages = []
     filesname = glob.glob(path)
