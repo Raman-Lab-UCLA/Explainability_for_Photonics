@@ -81,7 +81,7 @@ with open('C:/.../shap_explanations.data', 'rb') as filehandle:
 ```
 Tune the conversion settings in the script by modifying the following line in the script:
 ```python
-if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #95% red        
+if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #Convert Top 95% of Red Pixels        
 ```
 <p align="center">
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_validation.PNG" width="500" />
