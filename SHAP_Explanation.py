@@ -6,8 +6,8 @@ import pickle
 
 ## Define File Locations (CNN, Test Image, and Background Image)
 model = load_model('C:/.../model.h5', compile=False)
-test_img_path = 'C:/.../Test.png'
 back_img_path = 'C:/.../Background.png'
+base_img_path = 'C:/.../Base.png'
 
 ## load Image Function
 def loadImages(path):
@@ -19,16 +19,16 @@ def loadImages(path):
     return gray
 
 ## Load Test and Background Image
-test_img = loadImages(test_img_path) 
-test_img = np.array(test_img)
+base_img = loadImages(base_img_path) 
+base_img = np.array(base_img)
 back_img = loadImages(back_img_path)
 back_img = np.array(back_img)
 
 ## Perform SHAP Explanations
 background = back_img.reshape(1,40,40,1)
 e = shap.DeepExplainer(model, background)
-shap_values = e.shap_values(test_img.reshape(1,40,40,1))
-shap.image_plot(shap_values, test_img.reshape(1,40,40,1), show=False)
+shap_values = e.shap_values(base_img.reshape(1,40,40,1))
+shap.image_plot(shap_values, base_img.reshape(1,40,40,1), show=False)
 
 ## Save SHAP Explanations
 with open('shap_explanations.data', 'wb') as filehandle:
