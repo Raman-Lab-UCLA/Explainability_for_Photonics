@@ -25,7 +25,7 @@ save_dir = 'C:/.../model.h5'
 Running this file will train the CNN and save the model in the specified location. 
 
 ### 2) Explain CNN Results (SHAP_Explanation.py)
-Deep SHAP explains the predictions of an 'base' image in reference to a 'background'. This background can be a collection of images or a single image. To minimize noise, our recommendation is to use a 'white' image as the base, and the image to be evaluated as the 'background'. This will compare the importance of a feature, to the absence of this feature, towards a target output. Simply update the following paths and run the 'SHAP_Explanation.py' script:
+Deep SHAP explains the predictions of an 'Base' image in reference to a 'Background'. This Background can be a collection of images or a single image. To minimize noise, our recommendation is to use a 'white' image as the Base, and the image to be evaluated as the Background. This will compare the importance of a feature, to the absence of this feature, towards a target output. Simply update the following paths and run the 'SHAP_Explanation.py' script (you can refer to the <b>Examples</b> folder for sample Background and Base images):
 ```python
 ## Define File Locations (CNN, Test Image, and Background Image)
 model = load_model('C:/.../model.h5', compile=False)
