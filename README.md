@@ -1,6 +1,6 @@
 # Explainability for Photonics
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/explainability_publication.PNG" width="800" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/explainability_publication.PNG" width="800" />
 </p>
 
 ## Introduction
@@ -37,7 +37,7 @@ After running the script, a list of SHAP value heatmaps (<b>shap_values</b>) wil
 shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 'i' a value between 0 and the total list size
 ```
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_index.png" width="250" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/shap_values_index.png" width="250" />
 </p>
 
 Optionally, for ease of viewing, the SHAP values can be normalized and replotted like so: 
@@ -69,7 +69,7 @@ fig.colorbar(pcm)
 ax.axis('off')
 ```
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_values_replot.png" width="200" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/shap_values_replot.png" width="200" />
 </p>
 
 ### 3) Explanation Validation (SHAP_Validation.py)
@@ -84,5 +84,5 @@ Tune the conversion settings in the script by modifying the following line in th
 if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #Convert Top 95% of Red Pixels        
 ```
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/shap_validation.PNG" width="500" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/shap_validation.PNG" width="500" />
 </p>
