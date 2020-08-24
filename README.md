@@ -1,4 +1,4 @@
-# Explainability_for_Metasurfaces
+# Explainability for Photonics
 <p align="center">
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Metasurfaces/blob/master/artwork/explainability_publication.PNG" width="800" />
 </p>
