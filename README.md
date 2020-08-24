@@ -79,7 +79,7 @@ To validate that the explanations represent physical phenomena, we used the SHAP
 with open('C:/.../shap_explanations.data', 'rb') as filehandle:
     shap_values = pickle.load(filehandle)
 ```
-Tune the conversion settings in the script by modifying the following line in the script:
+Tune the conversion settings by modifying the following line in the script:
 ```python
 if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_convert)*0.05: #Convert Top 95% of Red Pixels        
 ```
