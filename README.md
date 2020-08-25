@@ -9,8 +9,11 @@ Welcome to the Raman Lab GitHub! This repo will walk you through the code used i
 Here, we use Deep SHAP (or SHAP) to explain the behavior of nanophotonic structures learned by a convolutional neural network (CNN). 
 
 ## Requirements
-Python3 and Tensorflow 1.0 are recommended due to incompatibility issues with SHAP (as of this writing). 
-
+The following libraries are required to run the provided scripts. Specific versions are needed due to compatibility issues between Tensorflow and SHAP (as of this writing). 
+-Python 3.7.4
+-Tensorflow 1.14.0
+-SHAP 0.31.0
+-Open CV (CV2) 3.4.2
 Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap
 
 ## Steps
@@ -22,7 +25,7 @@ img_path = 'C:/.../*.png'
 spectra_path = 'C:/.../Spectra.csv'
 save_dir = 'C:/.../model.h5'
 ```
-Running this file will train the CNN and save the model in the specified location. 
+Running this file will train the CNN and save the model in the specified location. Depending on the available hardware, the CNN training process can take up to a few hours.
 
 ### 2) Explain CNN Results (SHAP_Explanation.py)
 Deep SHAP explains the predictions of an 'Base' image in reference to a 'Background'. This Background can be a collection of images or a single image. To minimize noise, our recommendation is to use a 'white' image as the Base, and the image to be evaluated as the Background. This will compare the importance of a feature, to the absence of this feature, towards a target output. Simply update the following paths and run the 'SHAP_Explanation.py' script (you can refer to the <b>Examples</b> folder for sample Background and Base images):
@@ -57,7 +60,7 @@ X, Y = np.meshgrid(X, Y)
 maximum = np.max(shap_values)
 minimum = -np.min(shap_values)
 
-shap_i = shap_values[i][:][:][:][:] #where 'i' a value between 0 and the total list size
+shap_i = shap_values[i][:][:][:][:] #where 'i' is a value between 0 and the total list size
 shap_i[shap_i>0] = shap_i[shap_i>0] / maximum
 shap_i[shap_i<0] = shap_i[shap_i<0] / minimum
 shap_values_normalized = shap_i.squeeze()[::-1]
