@@ -42,7 +42,7 @@ base_img_path = 'C:/.../Base.png'
 ```
 After running the script, a list of SHAP value heatmaps (<b>shap_values</b>) will be generated. The size and order of this list reflects the CNN's outputs, and the resolution of the heatmaps are the same as the CNN input images. Therefore, to plot a specific heatmap (corresponding to a particular wavelength), simply index the list as such:
 ```python
-shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 'i' a value between 0 and the total list size
+shap.image_plot(shap_values[i], back_img.reshape(1,40,40,1), show=False) #where 'i' is a value between 0 and the total list size
 ```
 <p align="center">
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/shap_values_index.png" width="250" />
