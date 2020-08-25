@@ -17,7 +17,7 @@ The following libraries are required to run the provided scripts. Specific versi
 
 -SHAP 0.31.0
 
--Open CV (CV2) 3.4.2
+-OpenCV (CV2) 3.4.2
 
 Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap
 
