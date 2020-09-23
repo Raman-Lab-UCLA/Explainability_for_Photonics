@@ -19,6 +19,8 @@ The following libraries are required to run the provided scripts. Specific versi
 
 -OpenCV (CV2) 3.4.2
 
+-Numpy 1.17.3
+
 Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap
 
 ## Steps
