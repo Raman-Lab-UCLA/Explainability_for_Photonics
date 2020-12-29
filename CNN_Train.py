@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 import os
 import glob
 import cv2
+import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense, BatchNormalization, LeakyReLU, Flatten
 from keras.layers import Conv2D, AveragePooling2D
@@ -72,10 +73,18 @@ print(model.summary())
 epochs = 300
 batch_size = 16
 validation_data = (CNN_input_test, CNN_output_test)
-model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, epochs = epochs, validation_data = validation_data)
+history = model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, epochs = epochs, validation_data = validation_data)
 score = model.evaluate(CNN_input_test, CNN_output_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 print(model.summary())
 model.save(save_dir)
 
+# Plot Losses
+fig, ax1 = plt.subplots()
+ax1.plot(history.history['loss'], color = 'b', label = 'Training Loss')
+ax1.plot(history.history['val_loss'], color = 'r', label = 'Validation Loss')
+ax1.set_ylabel('Loss')
+ax1.set_xlabel('Epochs')
+plt.legend(loc = 'upper right')
+plt.show()
