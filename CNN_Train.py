@@ -73,7 +73,8 @@ print(model.summary())
 epochs = 300
 batch_size = 16
 validation_data = (CNN_input_test, CNN_output_test)
-history = model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, epochs = epochs, validation_data = validation_data)
+es = EarlyStopping(monitor='val_loss', min_delta=0, patience=100, verbose=0, mode='auto', restore_best_weights=True)
+history = model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, epochs = epochs, validation_data = validation_data, callbacks = [es])
 score = model.evaluate(CNN_input_test, CNN_output_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
