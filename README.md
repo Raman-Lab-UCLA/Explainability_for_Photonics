@@ -1,6 +1,6 @@
 # Explainability for Photonics
 <p align="center">
-  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/explainability_publication.PNG" width="800" />
+  <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/explainability_publication.PNG" width="700" />
 </p>
 
 ## Introduction
