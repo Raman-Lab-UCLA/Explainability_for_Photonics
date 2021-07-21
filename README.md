@@ -97,7 +97,7 @@ if np.max(shap_values_convert) > shap_values_convert[i][j] > np.max(shap_values_
   <img src="https://github.com/Raman-Lab-UCLA/Explainability_for_Photonics/blob/master/artwork/shap_validation.PNG" width="500" />
 </p>
 
-### Reference
+### Citation
 If you find this repo helpful, or use any of the code you find here, please cite our work using the following: 
 ```python
 C. Yeung, et al. Elucidating the Behavior of Nanophotonic Structures through Explainable Machine Learning Algorithms. ACS Photonics, 2020. 
