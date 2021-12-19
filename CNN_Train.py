@@ -9,6 +9,7 @@ from keras.models import Sequential
 from keras.layers import Dense, BatchNormalization, LeakyReLU, Flatten
 from keras.layers import Conv2D, AveragePooling2D
 from keras.optimizers import Adam
+from keras.callbacks import EarlyStopping
 
 ## Define File Locations (Images, Spectra, and CNN Model Save)
 img_path = 'C:/.../*.png'
