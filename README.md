@@ -19,6 +19,8 @@ The following libraries are required to run the provided scripts. Specific versi
 
 -SHAP 0.31.0
 
+-Matplotlib 3.3.2
+
 Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap. For convenience, here are installation commands for the Conda distribution (after installing Anaconda: https://www.anaconda.com/products/individual).
 
 ```
