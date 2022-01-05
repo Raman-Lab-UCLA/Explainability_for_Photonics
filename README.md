@@ -11,15 +11,13 @@ Here, we use Deep SHAP (or SHAP) to explain the behavior of nanophotonic structu
 ## Requirements
 The following libraries are required to run the provided scripts. Specific versions are needed due to compatibility issues between Tensorflow and SHAP (as of this writing). 
 
--Python 3.7.4
+-Python 3.7
 
 -Tensorflow 1.14.0
 
 -Keras 2.3.1
 
 -SHAP 0.31.0
-
--OpenCV (CV2) 3.4.2
 
 Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap. For convenience, here are installation commands for the Conda distribution (after installing Anaconda: https://www.anaconda.com/products/individual).
 
