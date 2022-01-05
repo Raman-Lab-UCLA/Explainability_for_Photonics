@@ -15,6 +15,8 @@ The following libraries are required to run the provided scripts. Specific versi
 
 -Tensorflow 1.14.0
 
+-Keras 2.3.1
+
 -SHAP 0.31.0
 
 -OpenCV (CV2) 3.4.2
