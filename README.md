@@ -19,9 +19,19 @@ The following libraries are required to run the provided scripts. Specific versi
 
 -OpenCV (CV2) 3.4.2
 
--Numpy 1.17.3
+Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap. For convenience, here are installation commands for the Conda distribution (after installing Anaconda: https://www.anaconda.com/products/individual).
 
-Installation and usage instructions for Deep SHAP are at: https://github.com/slundberg/shap
+```
+conda create -n myenv python=3.7
+conda activate myenv
+conda install tensorflow-gpu==1.14.0
+conda install keras
+conda install -c anaconda opencv
+conda install -c anaconda scikit-learn
+conda install matplotlib
+conda install pandas
+conda install spyder
+```
 
 ## Steps
 ### 1) Train the CNN (CNN_Train.py)
