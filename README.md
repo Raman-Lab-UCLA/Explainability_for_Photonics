@@ -32,6 +32,7 @@ conda install -c anaconda opencv
 conda install -c anaconda scikit-learn
 conda install matplotlib
 conda install pandas
+conda install -c conda-forge shap==0.31.0
 conda install spyder
 ```
 
