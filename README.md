@@ -30,7 +30,7 @@ conda install tensorflow-gpu==1.14.0
 conda install keras
 conda install -c anaconda opencv
 conda install -c anaconda scikit-learn
-conda install matplotlib
+conda install matplotlib==3.3.2
 conda install pandas
 conda install -c conda-forge shap==0.31.0
 conda install spyder
