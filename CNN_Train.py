@@ -71,10 +71,10 @@ model.compile(loss = 'mean_squared_error', optimizer = cnnopt, metrics = ['accur
 print(model.summary())        
 
 # Train and Save CNN
-epochs = 300
+epochs = 1000
 batch_size = 16
 validation_data = (CNN_input_test, CNN_output_test)
-es = EarlyStopping(monitor='val_loss', min_delta=0, patience=100, verbose=0, mode='auto', restore_best_weights=True)
+es = EarlyStopping(monitor='val_loss', min_delta=0, patience=50, verbose=0, mode='auto', restore_best_weights=True)
 history = model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, epochs = epochs, validation_data = validation_data, callbacks = [es])
 score = model.evaluate(CNN_input_test, CNN_output_test, verbose=0)
 print('Test loss:', score[0])
@@ -83,10 +83,11 @@ print(model.summary())
 model.save(save_dir)
 
 # Plot Losses
-fig, ax1 = plt.subplots()
-ax1.plot(history.history['loss'], color = 'b', label = 'Training Loss')
-ax1.plot(history.history['val_loss'], color = 'r', label = 'Validation Loss')
-ax1.set_ylabel('Loss')
-ax1.set_xlabel('Epochs')
+fig, ax = plt.subplots()
+ax.plot(history.history['loss'], color = 'b', label = 'Training Loss')
+ax.plot(history.history['val_loss'], color = 'r', label = 'Validation Loss')
+ax.set_ylabel('Loss')
+ax.set_xlabel('Epochs')
 plt.legend(loc = 'upper right')
+plt.ylim([0, 0.1])
 plt.show()
